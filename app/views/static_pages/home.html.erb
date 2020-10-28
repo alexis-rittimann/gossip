@@ -1,0 +1,16 @@
+<h1>site de gossip</h1>
+  <p>Bienvenue dans la liste des potins</p>
+
+  <div class="card-columns">
+    <% @gossips.each do |gossip| %>
+
+      <div  class="card text-white bg-secondary mb-3 " style="max-width: 20rem;">
+        <div class="card-header"><%= gossip.user.first_name %><br/></div>
+        <div class="card-body">
+          <h5 class="card-title"><%= gossip.title %><br/></h5>
+          <p class="btn btn-warning"><%= link_to "Détails", "/static_pages/details/#{gossip.id}" %></p>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
