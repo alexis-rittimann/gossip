@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
    @user = User.new(params[:user])
    @user.password = params[:password]
    @user.save!
+   redirect_to @user
   end
   def create
     # cherche s'il existe un utilisateur en base avec l’e-mail
@@ -12,7 +13,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       # redirige où tu veux, avec un flash ou pas
-
+      redirect_to @user
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
