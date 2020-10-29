@@ -1,0 +1,18 @@
+
+
+<h1>Gossip de la ville <%= @city.name %></h1>
+
+
+<div class="card-columns">
+  <% @city.users.each do |user| %>
+  <% user.gossips.each do |gossip| %>
+
+    <div  class="card text-white bg-secondary mb-3 " style="max-width: 20rem;">
+      <div class="card-header"><%= gossip.title %><br/></div>
+      <div class="card-body">
+        <h5 class="card-title">Ecrit par <%= gossip.user.first_name %><br/></h5>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
+</div>

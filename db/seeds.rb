@@ -63,7 +63,8 @@ p "-----------------------"
     description: Faker::Lorem.sentence,
     email: Faker::Internet.email,
     age: Faker::Number.between(from: 7, to: 77),
-    city_id: City.all.sample.id
+    city_id: City.all.sample.id,
+    password_digest: "aarrt"
     )
 end
 p "Creation Users... #{User.count} "

@@ -1,0 +1,12 @@
+<h1>GOSSIP girl</h1>
+
+<%= @gossip.title %> <br>
+<%= @gossip.content %> <br>
+<br><br>
+<%= @gossip.user.first_name%>
+<br>
+<%= @gossip.user.city.name%>
+<br>
+<%= @gossip.created_at %> <br>
+<%= link_to user_path(@gossip.user.id), class:"btn btn-primary" do %>profil de l'utilisateur<% end %>
+<%= link_to city_path(@gossip.user.city.id), class:"btn btn-primary" do %>ville<% end %>
